@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import * as LucideIcons from 'lucide-react';
 import { type ServiceBenefit, type ServiceProgram } from '@/lib/initial-data';
 import { db, firebaseInitializationError } from '@/lib/firebase';
-import { collection, query, where, getDocs } from 'firestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 
 const iconMap: { [key: string]: React.ElementType } = LucideIcons;
