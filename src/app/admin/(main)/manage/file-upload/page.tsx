@@ -28,7 +28,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { db, firebaseInitializationError } from '@/lib/firebase';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
-import { deleteFileUploadItem } from './actions';
+import { deleteFileUploadItem } from '../file-upload/actions';
 
 export interface FileUploadItem {
   id: string;
