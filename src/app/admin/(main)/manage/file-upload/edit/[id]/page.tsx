@@ -11,10 +11,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, Save, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { type FileUploadItem } from '../page';
+import { type FileUploadItem } from '../../page';
 import { db, firebaseInitializationError } from '@/lib/firebase';
-import { doc, getDoc } from 'firebase/firestore';
-import { updateFileUploadItem } from '../actions';
+import { doc, Firestore, getDoc } from 'firebase/firestore';
+import { updateFileUploadItem } from '../../actions';
 
 export default function EditFileUploadPage() {
   const router = useRouter();
@@ -40,7 +40,7 @@ export default function EditFileUploadPage() {
     }
 
     const fetchItem = async () => {
-      const docRef = doc(db, 'fileUploads', itemId);
+      const docRef = doc(db as Firestore, 'fileUploads', itemId);
       try {
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
