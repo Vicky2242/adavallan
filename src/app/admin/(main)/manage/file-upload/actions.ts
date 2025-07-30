@@ -83,7 +83,7 @@ export async function updateFileUploadItem(formData: FormData) {
       
       try {
         if(currentImageUrl.includes('firebasestorage.googleapis.com')) {
-          const oldImageRef = ref(storage, currentImageUrl);
+          const oldImageRef = ref(storage!, currentImageUrl);
           await deleteObject(oldImageRef);
         }
       } catch (deleteError: any) {
