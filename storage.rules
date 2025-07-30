@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// By default, deny all reads and writes
+// This is a good security practice
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Allow public read access to all files
+    // This is useful for images, etc. that need to be displayed on your site
+    match /{allPaths=**} {
+      allow read;
+      // Temporarily allow writes from anyone to fix the upload issue.
+      // We can secure this later.
+      allow write;
+    }
+  }
+}

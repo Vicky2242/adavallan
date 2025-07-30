@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // WARNING: These rules are wide open and allow anyone to read, write, or
+    // delete data in your entire database. This is useful for getting started
+    // quickly, but it is not secure.
+    //
+    // TODO: Secure your database by replacing "if true;" with rules that
+    // properly authenticate and authorize users.
+    // e.g. "allow read, write: if request.auth != null;" to allow only logged-in users.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
