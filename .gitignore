@@ -30,3 +30,10 @@ next-env.d.ts
 # Firebase
 # IMPORTANT: Never commit your service account key!
 src/scripts/service-account-key.json
+
+# 🔒 Environment variables
+.env.local
+
+# ✅ Optional: other sensitive configs
+.env.*
+firebaseConfig.ts
