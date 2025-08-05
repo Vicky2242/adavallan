@@ -6,10 +6,10 @@ import { getStorage, type FirebaseStorage } from "firebase/storage";
 // IMPORTANT: Replace these with your actual Firebase project configuration!
 // You can find these in your Firebase project settings.
 const firebaseConfig = {
-  apiKey: "AIzaSyA884c7i4zKk0aDq2OVcb6-iF0aK3D648c",
-  authDomain: "ssc-registration-fnu7v.firebaseapp.com",
-  projectId: "ssc-registration-fnu7v",
-  storageBucket: "ssc-registration-fnu7v.appspot.com",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: "382250757524",
   appId: "1:382250757524:web:e169ab60fda786256a3381"
 };
